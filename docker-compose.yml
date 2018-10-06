@@ -20,10 +20,10 @@ services:
         restart: always
     app:
         tty: true
-        image: golang
+        build: $PWD/go
         container_name: "web"
         volumes:
-            - $PWD:/go/src
+            - $PWD/go/src/app:/go/src/app
         ports:
             - "20002:80"
         links:
