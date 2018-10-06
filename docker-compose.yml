@@ -21,7 +21,7 @@ services:
     app:
         tty: true
         build: $PWD/go
-        container_name: "web"
+        container_name: "app"
         volumes:
             - $PWD/go/src/app:/go/src/app
         ports:
@@ -31,7 +31,7 @@ services:
         restart: always
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
-        container_name: "pma"
+        container_name: "phpmyadmin"
         environment:
             - PMA_ARBITRARY=1
             - PMA_HOST=db
